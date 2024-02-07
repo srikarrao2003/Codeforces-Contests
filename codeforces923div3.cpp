@@ -184,11 +184,38 @@ void solveD()
     }
 }
 
+void solveE()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n,k;
+        cin>>n>>k;
+        vector<int> res(n);
+        int l = 1, h = n;
+        for(int i=1;i<=k;i++)
+        {
+            for(int j=i;j<=n;j+=k)
+            {
+                if(i%2==1) res[j-1] = l++;
+                else res[j-1] = h--;
+            }
+        }
+        for(auto i : res)
+        {
+            cout<<i<<" ";
+        }
+        cout<<endl;
+    }
+}
+
 int32_t main()
 {
     // solveA();
     // solveB();
     // solveC();
-    solveD();
+    // solveD();
+    solveE();
     return 0;
 }
